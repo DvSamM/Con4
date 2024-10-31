@@ -1,43 +1,44 @@
-body{
+body {
     background-color: cornflowerblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.app-container{
-    width: 800px;
-    height: 800px;
-    position: absolute;
-    left: 50%;
-    /* top: 10%; */
-    margin-left: -400px;
+    margin: 0;
+    padding: 0;
 }
 
-.panel{
-    position: absolute;
+.app-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.panel {
+    position: relative;
     background-color: lightgoldenrodyellow;
     border: 8px solid burlywood !important;
     box-shadow: 7px 5px 15px 3px black;
     z-index: 1;
+    border-radius: 10px;
 }
-.header{
-    left: 50%;
-    top: 90px; 
+
+.header {
     height: 80px;
-    width: 300px;
-    margin-left: -120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.footer{
-    left: 50%;
-    top: 750px;
+
+.footer {
     height: 80px;
-    width: 300px;
-    margin-left: -120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.footer button{
-    position: relative;
-    left: 50%;
-    top: 20%;
-    margin-left: -125px;
-    width: 250px;
+
+.footer button {
+    width: 80%;
+    max-width: 250px;
     height: 50px;
     background-color: lightblue;
     font-size: 30px;
@@ -45,77 +46,90 @@ body{
     border: 5px solid chocolate;
     font-weight: bold;
 }
-.header-text{
-   font-size: 30px;
-   font-weight: bold;
-   width: 100%;
-   /* width: 200px; */
-   margin: 0;
-   position: absolute;
-   top: 50%;
-   left: 60%;
-   /* left: 50%; */
-   -ms-transform: translate(-50%, -50%);
-   transform: translate(-50%, -50%);
+
+.header-text {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
 }
 
-.game{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr 1fr;
-    padding:20px;
-    width:520px;
-    position:absolute;
-    left:50%;
-    top:20%;
-    margin-left:-250px;
+.game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(4, 1fr); /* 4 rows */
+    padding: 20px;
     background-color: bisque;
     border: 8px solid burlywood;
     border-radius: 8%;
-    box-shadow: 7px 5px 15px 3px black ;
-    --webkit-box-shadow:7px 5px 15px 3px black;
-    
+    box-shadow: 7px 5px 15px 3px black;
+    gap: 10px; /* Space between circles */
 }
-.gameCircle{
-    width:100px;
-    height:100px;
-   margin:10px;
+
+.gameCircle {
+    width: 80px; /* Fixed width */
+    height: 80px; /* Fixed height */
     border-radius: 50%;
     border: 5px solid rgb(16, 16, 16);
+    position: relative; /* Position for inner content */
+    margin: auto; /* Center the circle within the grid cell */
 }
-.player_0{
+
+.player_0 {
     background-color: beige;
 }
-.player_1{
+
+.player_1 {
     background-color: red;
 }
-.player_2{
+
+.player_2 {
     background-color: blue;
 }
+
 .footerr {
     margin-top: 20px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 100%; /* Make the footer full width */
-    position: relative; /* Ensure proper positioning */
-    bottom: 0; /* Position at the bottom */
-  }
-  
-  .footerr p {
+    width: 100%; /* Full width */
+}
+
+.footerr p {
     font-size: 1rem;
     color: #333;
     margin: 0;
-  }
-  
-  .footerr a {
+}
+
+.footerr a {
     color: #007bff; /* Color for the link */
     text-decoration: none; /* Remove underline */
     font-weight: bold; /* Bold text for emphasis */
-  }
-  
-  .footerr a:hover {
+}
+
+.footerr a:hover {
     text-decoration: underline; /* Underline on hover */
-  }
-  
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 600px) {
+    .header-text {
+        font-size: 24px; /* Smaller font size for smaller screens */
+    }
+
+    .footer button {
+        font-size: 20px; /* Smaller button text */
+        height: 40px; /* Adjust button height */
+    }
+
+    .game {
+        padding: 10px; /* Less padding */
+        gap: 5px; /* Smaller gap between circles */
+    }
+
+    .gameCircle {
+        width: 60px; /* Smaller circles for small screens */
+        height: 60px; /* Smaller height */
+    }
+}
