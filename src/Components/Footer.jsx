@@ -1,12 +1,24 @@
-import React from 'react'
+import React from 'react';
 import "../index.css"
+import {
+    GAME_STATE_PLAYING,
+} from "../../Constants";
 
-const Footer = () => {
+const Footer = ({ onSuggestClick, onNewGameClick, gameState }) => {
+  const renderButtons = () => {
+    if (gameState === GAME_STATE_PLAYING) {
+      return <button onClick={onSuggestClick}>Suggest</button>
+    }
+    return <button onClick={onNewGameClick}>New Game</button>;
+  }
+
+
   return (
-    <div className=' panel footer'>
-  <button>NEW GAME</button>
-</div>
-  )
-}
+    <div className="panel footer">
+      {renderButtons()}      
+    </div>
+  );
 
-export default Footer
+};
+
+export default Footer;

@@ -7,7 +7,7 @@ body{
     height: 800px;
     position: absolute;
     left: 50%;
-    top: 10%;
+    /* top: 10%; */
     margin-left: -400px;
 }
 
@@ -92,3 +92,30 @@ body{
 .player_2{
     background-color: blue;
 }
+.footerr {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Make the footer full width */
+    position: relative; /* Ensure proper positioning */
+    bottom: 0; /* Position at the bottom */
+  }
+  
+  .footerr p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  .footerr a {
+    color: #007bff; /* Color for the link */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text for emphasis */
+  }
+  
+  .footerr a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
